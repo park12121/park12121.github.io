@@ -18,16 +18,27 @@ document.getElementById('participant-count').addEventListener('change', function
 });
 
 document.getElementById('reservation-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const session = document.getElementById('session-select').value;
+  const contact = document.getElementById('contact').value;
   const count = parseInt(document.getElementById('participant-count').value);
+
+  const participants = [];
   let valid = true;
+
   for (let i = 1; i <= count; i++) {
-    const ageInput = document.querySelector(`input[name='age${i}']`);
-    const age = parseInt(ageInput.value);
+    const name = document.querySelector(`input[name='name${i}']`).value;
+    const age = parseInt(document.querySelector(`input[name='age${i}']`).value);
     if (age < 6) {
       alert(`참여자 ${i}는 6세 미만으로 신청이 불가합니다.`);
       valid = false;
       break;
     }
+    participants.push({ name, age });
   }
-  if (!valid) e.preventDefault();
-});
+
+  if (!valid) return;
+
+  const scriptUrl = 'https://scrip
+
