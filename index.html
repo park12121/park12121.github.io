@@ -4,105 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>남원시립김병종미술관,콩 교육 프로그램 통합 예약 신청 페이지</title>
-  <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      font-family: sans-serif;
-      padding: 20px;
-      background-color: #f9f9f9;
-    }
-    h1, h2, h3 {
-      color: #333;
-    }
-    form {
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-    label {
-      display: block;
-      margin-bottom: 12px;
-    }
-    input, select {
-      padding: 8px;
-      width: 100%;
-      margin-top: 4px;
-    }
-    .participant-block {
-      margin-top: 10px;
-      padding: 10px;
-      background: #eef;
-      border-radius: 6px;
-    }
-    button {
-      padding: 10px 20px;
-      background-color: #4caf50;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #45a049;
-    }
+    body { font-family: sans-serif; padding: 20px; background-color: #f9f9f9; }
+    form { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    label { display: block; margin-bottom: 12px; }
+    input, select { padding: 8px; width: 100%; margin-top: 4px; }
+    .participant-block { background: #eef; padding: 10px; margin-top: 10px; border-radius: 6px; }
+    button { padding: 10px 20px; background: #4caf50; color: white; border: none; border-radius: 4px; cursor: pointer; }
   </style>
 </head>
 <body>
   <h1>남원시립김병종미술관,콩 교육 프로그램 통합 예약 신청 페이지</h1>
+  <form id="reservation-form">
+    <label>수업 차시 선택:<br>
+      <select id="session-select" required>
+        <option value="">-- 차시를 선택하세요 --</option>
+        <option value="1차시">1차시 (13:00 ~ 13:40)</option>
+        <option value="2차시">2차시 (14:00 ~ 14:40)</option>
+      </select>
+    </label>
 
-  <section class="program-info">
-    <h2>주말교육</h2>
-    <p>2025년 6월 14일 (토) 진행</p>
-    <form id="reservation-form">
-      <label>수업 차시 선택:<br>
-        <select id="session-select" required>
-          <option value="">-- 차시를 선택하세요 --</option>
-          <option value="1차시">1차시 (13:00 ~ 13:40)</option>
-          <option value="2차시">2차시 (14:00 ~ 14:40)</option>
-        </select>
-      </label>
+    <label>참여 인원 수 선택:<br>
+      <select id="participant-count" required>
+        <option value="">-- 인원을 선택하세요 --</option>
+        <option value="1">1명</option>
+        <option value="2">2명</option>
+        <option value="3">3명</option>
+        <option value="4">4명</option>
+        <option value="5">5명</option>
+        <option value="6">6명</option>
+      </select>
+    </label>
 
-      <label>참여 인원 수 선택:<br>
-        <select id="participant-count" required>
-          <option value="">-- 인원을 선택하세요 --</option>
-          <option value="1">1명</option>
-          <option value="2">2명</option>
-          <option value="3">3명</option>
-          <option value="4">4명</option>
-          <option value="5">5명</option>
-          <option value="6">6명</option>
-        </select>
-      </label>
+    <div id="participants-container"></div>
 
-      <div id="participants-container"></div>
+    <label>대표자 연락처:<br>
+      <input type="tel" id="contact" required placeholder="010-1234-5678">
+    </label>
 
-      <label>대표자 연락처:<br>
-        <input type="tel" id="contact" placeholder="예: 010-1234-5678" required>
-      </label>
-
-      <label>
-        <input type="checkbox" id="agree-check" required>
-        안내사항 및 초상권 동의 내용을 모두 확인했습니다.
-      </label>
-
-      <button type="submit">신청하기</button>
-    </form>
-  </section>
-
-  <section class="notices">
-    <h3>※ 안내사항</h3>
-    <ul>
-      <li>본 수업은 6세 이상부터 참여가 가능합니다.</li>
-      <li>수업은 정시에 시작되며, 신청 인원에 따라 마감될 수 있습니다.</li>
-      <li>참여 아동의 이름과 나이를 정확히 입력해주세요.</li>
-    </ul>
-    <h3>※ 초상권 동의 안내</h3>
-    <p>
-      본 프로그램 중 촬영된 사진은 미술관의 홍보 및 기록용으로 사용될 수 있으며,<br>
-      신청자는 이에 동의하는 것으로 간주합니다.
-    </p>
-  </section>
+    <label><input type="checkbox" id="agree-check" required> 안내사항 및 초상권 동의 내용을 모두 확인했습니다.</label>
+    <button type="submit">신청하기</button>
+  </form>
 
   <script src="script.js"></script>
 </body>
