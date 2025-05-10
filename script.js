@@ -40,5 +40,27 @@ document.getElementById('reservation-form').addEventListener('submit', function 
 
   if (!valid) return;
 
-  const scriptUrl = 'https://scrip
+  const scriptUrl = 'https://script.google.com/macros/s/AKfycbxcqXTvSaCEyU0N2GUdfDVdSHG6jQAxGyYAo5ys-7dB_FDe6krcUqfoJTwmd7p4Q9RxVw/exec';
 
+  fetch(scriptUrl, {
+    method: 'POST',
+    body: JSON.stringify({
+      session,
+      contact,
+      participants
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => response.text())
+    .then(result => {
+      alert('신청이 완료되었습니다!');
+      document.getElementById('reservation-form').reset();
+      document.getElementById('participants-container').innerHTML = '';
+    })
+    .catch(error => {
+      alert('오류가 발생했습니다. 다시 시도해주세요.');
+      console.error('Error!', error.message);
+    });
+});
