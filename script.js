@@ -40,7 +40,7 @@ document.getElementById('reservation-form').addEventListener('submit', function 
 
   if (!valid) return;
 
-  const scriptUrl = 'https://script.google.com/macros/s/AKfycbxcqXTvSaCEyU0N2GUdfDVdSHG6jQAxGyYAo5ys-7dB_FDe6krcUqfoJTwmd7p4Q9RxVw/exec';
+  const scriptUrl = 'https://script.google.com/macros/s/AKfycbzBhy6LR8E3mOSkzao5U3VhqUthpyfLr835XgxK4N0GgJdoHe-HjfnUOa6TFkMzG0WYHg/exec';
 
   fetch(scriptUrl, {
     method: 'POST',
