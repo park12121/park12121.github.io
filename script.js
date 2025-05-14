@@ -42,6 +42,7 @@ document.getElementById('reservation-form').addEventListener('submit', function 
 
   const scriptUrl = 'https://script.google.com/macros/s/AKfycbzBhy6LR8E3mOSkzao5U3VhqUthpyfLr835XgxK4N0GgJdoHe-HjfnUOa6TFkMzG0WYHg/exec';
 
+
   fetch(scriptUrl, {
     method: 'POST',
     body: JSON.stringify({
