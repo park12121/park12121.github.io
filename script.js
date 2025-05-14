@@ -40,8 +40,7 @@ document.getElementById('reservation-form').addEventListener('submit', function 
 
   if (!valid) return;
 
-  const scriptUrl = 'https://script.google.com/macros/s/AKfycbzBhy6LR8E3mOSkzao5U3VhqUthpyfLr835XgxK4N0GgJdoHe-HjfnUOa6TFkMzG0WYHg/exec';
-
+  const scriptUrl = 'https://script.google.com/macros/s/AKfycbz5Gm_RLN1M46eqZuCA5B3-cOPVdxGGMmdBi7rJHzsnal57Nz8eoGyRnlyHPx0_JIJi/exec';
 
   fetch(scriptUrl, {
     method: 'POST',
@@ -65,3 +64,4 @@ document.getElementById('reservation-form').addEventListener('submit', function 
       console.error('Error!', error.message);
     });
 });
+
